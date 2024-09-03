@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       const secretToString = secretKeysArray.map((a) => a).join("");
       // secretKeys.textContent = secretToString;
-      console.log(secretToString);
+      // console.log(secretToString);
 
       return secretToString;
     };
@@ -36,14 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let counter = 1;
     const passkey = secretfourDigitKeys();
+    console.log(`passkey: ${passkey}`);
+    // ---tatanggalin ko rin itong code navigator, cheat code for debugging pa
+    const cheat = document.querySelector(".cheat");
+    cheat.textContent = passkey;
+    // ---tatanggalin ko rin itong code navigator, cheat code for debugging pa
 
     enterBtn.addEventListener("click", () => {
-      const currentRow = document.querySelectorAll(`.key-rows .row-${counter}`);
-
       if (counter <= 5) {
         let arrayGuest = [];
         let newArr;
-        let guest;
 
         // [logic para sa input fields]
         document
@@ -95,21 +97,47 @@ document.addEventListener("DOMContentLoaded", () => {
           secretKeys.textContent = passkey;
           resultMsg.textContent = "Correct Guest! Good Job!";
         }
+
+        // [code para sa color indicator ng input fields, green yellow or default]
+        // --green if correct number and position
+        // --yellow if correct number but wrong position
+        // --default or gray if incorrect
+        const colorIndicator = () => {
+          let arrayPasskeys = passkey.split("");
+          console.log(arrayPasskeys);
+          console.log(arrayGuest);
+          if (counter <= 5) {
+            document
+              .querySelectorAll(`.row${counter - 1} .row-${counter - 1}`)
+              .forEach((input) => {
+                if (input.value == arrayPasskeys[counter - 1]) {
+                  input.style.backgroundColor = "green";
+                } else if (arrayPasskeys.includes(input.value)) {
+                  input.style.backgroundColor = "yellow";
+                } else {
+                  input.style.backgroundColor = "gray";
+                }
+              });
+          }
+        };
+        colorIndicator();
       }
     });
   };
   gamePlay();
 
+  // [code para sa play again button, div will popup if correct guest or out of turn]
   const replayBtn = document.querySelector(".replay-btn");
+  const allInputFields = document.querySelectorAll(`.key-rows input`);
 
   replayBtn.addEventListener("click", () => {
     gamePlay();
     const popupResultContainer = document.querySelector(".result-container");
     const secretKeys = document.querySelector(".secret-keys");
+    allInputFields.forEach((input) => (input.style.backgroundColor = "#fff"));
 
     popupResultContainer.style.display = "none";
     secretKeys.textContent = "????";
-
     for (let i = 1; i <= 5; i++) {
       document.querySelectorAll(`.row1 .row-1`).forEach((input) => {
         input.value = "";
