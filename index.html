@@ -3,148 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>UNLOCK-GAME</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
   </head>
   <body>
     <div class="main-container">
       <div class="container">
-        <h1 class="title">GUEST THE PASSWORD</h1>
-        <div class="lock-container">
-          <img class="myImg" src="assets/bluelock.gif" alt="lock-img" />
+        <button class="instruction-btn">Instructions</button>
+        <div class="img-container">
+          <img class="myImg" src="assets/bluelock.gif" alt="myImg" />
         </div>
-
-        <div class="password">
-          <p class="secret-keys">????</p>
+        <div class="secret-key-container">
+          <p class="secret-key">????</p>
         </div>
+        <div class="append-div-container">
+          <!-- i will append the guess input here dynamically -->
+        </div>
+        <div class="input-container">
+          <input
+            type="text"
+            class="input-guess"
+            maxlength="4"
+            placeholder="1212"
+          />
+        </div>
+        <button class="btn">Enter</button>
+      </div>
 
-        <div class="key-main-container">
-          <p class="key-title">Enter your Guest</p>
-          <div class="key-rows row1">
-            <input type="text" class="row-1 digit-value" maxlength="1" />
-            <input type="text" class="row-1 digit-value" maxlength="1" />
-            <input type="text" class="row-1 digit-value" maxlength="1" />
-            <input type="text" class="row-1 digit-value" maxlength="1" />
-          </div>
-
-          <div class="key-rows row2">
-            <input
-              type="text"
-              class="row-2 digit-value"
-              maxlength="1"
-              disabled
-            />
-            <input
-              type="text"
-              class="row-2 digit-value"
-              maxlength="1"
-              disabled
-            />
-            <input
-              type="text"
-              class="row-2 digit-value"
-              maxlength="1"
-              disabled
-            />
-            <input
-              type="text"
-              class="row-2 digit-value"
-              maxlength="1"
-              disabled
-            />
-          </div>
-
-          <div class="key-rows row3">
-            <input
-              type="text"
-              class="row-3 digit-value"
-              maxlength="1"
-              disabled
-            />
-            <input
-              type="text"
-              class="row-3 digit-value"
-              maxlength="1"
-              disabled
-            />
-            <input
-              type="text"
-              class="row-3 digit-value"
-              maxlength="1"
-              disabled
-            />
-            <input
-              type="text"
-              class="row-3 digit-value"
-              maxlength="1"
-              disabled
-            />
-          </div>
-
-          <div class="key-rows row4">
-            <input
-              type="text"
-              class="row-4 digit-value"
-              maxlength="1"
-              disabled
-            />
-            <input
-              type="text"
-              class="row-4 digit-value"
-              maxlength="1"
-              disabled
-            />
-            <input
-              type="text"
-              class="row-4 digit-value"
-              maxlength="1"
-              disabled
-            />
-            <input
-              type="text"
-              class="row-4 digit-value"
-              maxlength="1"
-              disabled
-            />
-          </div>
-
-          <div class="key-rows row5">
-            <input
-              type="text"
-              class="row-5 digit-value"
-              maxlength="1"
-              disabled
-            />
-            <input
-              type="text"
-              class="row-5 digit-value"
-              maxlength="1"
-              disabled
-            />
-            <input
-              type="text"
-              class="row-5 digit-value"
-              maxlength="1"
-              disabled
-            />
-            <input
-              type="text"
-              class="row-5 digit-value"
-              maxlength="1"
-              disabled
-            />
-          </div>
-          <div class="btn">Enter</div>
-          <p class="cheat">21212</p>
+      <!-- ---para popup kapag correct guess or out of turn -->
+      <div class="popup-main-container">
+        <div class="popup-container">
+          <p class="guess-text">Your Guess</p>
+          <div class="popup-password">1212</div>
+          <div class="popup-message">message here</div>
+          <button class="play-again-btn">Play Again</button>
+        </div>
+      </div>
+      <div class="symbol-main-container">
+        <div class="symbol-container">
+          <p class="symbol"></p>
         </div>
       </div>
     </div>
 
-    <!-- ---result popup--- -->
-    <div class="result-container">
-      <p class="password-value">9999</p>
-      <h1 class="result-message">message here</h1>
-      <button class="replay-btn">Play Again</button>
+    <!-- ---instructions -->
+    <div class="instruction-container">
+      <div class="instruction-img-container">
+        <img src="assets/instructions.png" alt="" />
+      </div>
+      <div class="note-container">
+        <p class="instruction-text">
+          <span class="note">NOTE:</span> be careful with repeated number, can
+          be tricky sometimes.
+        </p>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
