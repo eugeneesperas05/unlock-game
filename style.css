@@ -98,6 +98,10 @@ span {
   box-shadow: 1px 1px 10px #000;
 }
 
+.input-guess::placeholder {
+  font-size: 1rem;
+}
+
 .btn {
   padding: 10px 20px;
   letter-spacing: 2px;
@@ -111,13 +115,7 @@ span {
 }
 
 .btn:hover {
-  padding: 10px 20px;
-  letter-spacing: 2px;
-  border-radius: 5px;
-  border: none;
   background: #68c3e7;
-  color: #fff;
-  font-size: 1rem;
   border: 1px solid #3485a5;
 }
 
@@ -125,9 +123,9 @@ span {
 
 .popup-main-container {
   width: 100%;
-  height: 100vh;
+  height: 95vh;
   position: absolute;
-  top: 0;
+  top: -20px;
   display: none;
   /* display: flex; */
   justify-content: center;
@@ -213,6 +211,7 @@ span {
 .symbol {
   text-align: center;
   font-size: 10rem;
+  text-shadow: 0 0 10px #000;
 }
 
 /* --instructions */
