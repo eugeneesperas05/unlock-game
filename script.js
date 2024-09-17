@@ -114,6 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
           popupDisplayedKeys;
           popupMsg.textContent = "Good Job! Correct Guess!";
 
+          ///audio trigger
+          const CAudio = document.querySelector("#correct-audio");
+          CAudio.play();
           // -popup symbol check(✔) for 1000ms
           setTimeout(() => {
             symbol.textContent = "✔";
@@ -138,6 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
           popupMsg.textContent = "Better Luck Next Time!";
           enterBtn.disabled = true;
 
+          ///audio trigger
+          const wAudio = document.querySelector("#wrong-audio");
+          wAudio.play();
           // -popup symbol check(✗) for 1000ms
           setTimeout(() => {
             symbol.textContent = "✗";
